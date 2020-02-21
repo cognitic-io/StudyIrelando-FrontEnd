@@ -8,31 +8,26 @@ import MetisMenu from "metismenujs/dist/metismenujs";
 
 const SideNavContent = () => {
   return (
-    <React.Fragment>
+    <>
       <div id="sidebar-menu">
         <ul className="metismenu" id="side-menu">
-          {/* <li className="menu-title">Navigation</li> */}
-
           <li>
             <Link
               to="/"
               className="waves-effect has-dropdown"
               aria-expanded="true"
             >
-              <i className="fe-folder"></i>
-              {/* <span className="badge badge-success badge-pill float-right">
-                2
-              </span> */}
+              <i className="fe-book"></i>
               <span> Courses </span>
             </Link>
             <ul className="nav-second-level" aria-expanded="false">
               <li>
-                <Link to="/categories-create" className="side-nav-link-ref">
+                <Link to="/course-create" className="side-nav-link-ref">
                   Create
                 </Link>
               </li>
               <li>
-                <Link to="/categories-list" className="side-nav-link-ref">
+                <Link to="/courses" className="side-nav-link-ref">
                   List
                 </Link>
               </li>
@@ -41,7 +36,7 @@ const SideNavContent = () => {
         </ul>
       </div>
       <div className="clearfix"></div>
-    </React.Fragment>
+    </>
   );
 };
 

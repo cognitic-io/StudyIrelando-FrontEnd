@@ -92,14 +92,15 @@ class Login extends Component {
 
     let user = {
       name: username,
-      email,
-      password,
-      confirm
+      user: {
+        email,
+        password,
+        confirm
+      }
     };
 
     UserService.register(user)
       .then(response => {
-        console.log("response", response);
         if (response === 400) {
           this.setState({
             successRegister: false,
@@ -113,7 +114,6 @@ class Login extends Component {
         }
       })
       .catch(err => {
-        console.log("err", err);
         this.setState({
           successRegister: false,
           errorRegister: true

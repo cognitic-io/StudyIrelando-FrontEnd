@@ -16,6 +16,10 @@ const ForgetPassword = React.lazy(() =>
 const Register = React.lazy(() => import("./pages/account/Register"));
 const ConfirmAccount = React.lazy(() => import("./pages/account/Confirm"));
 
+const CourseContainer = React.lazy(() =>
+  import("./pages/course/CourseContainer")
+);
+const CourseAdd = React.lazy(() => import("./pages/course/CourseAdd"));
 // handle auth and authorization
 
 const PrivateRoute = ({ component: Component, roles, ...rest }) => (
@@ -68,6 +72,20 @@ const routes = [
     path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
+    route: PrivateRoute,
+    roles: ["Admin"]
+  },
+  {
+    path: "/courses",
+    name: "Courses",
+    component: CourseContainer,
+    route: PrivateRoute,
+    roles: ["Admin"]
+  },
+  {
+    path: "/course-create",
+    name: "Courses",
+    component: CourseAdd,
     route: PrivateRoute,
     roles: ["Admin"]
   },

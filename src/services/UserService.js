@@ -2,7 +2,8 @@ import axios from "axios";
 import { BASE_URL } from "./settings";
 
 const URLS = {
-  USERS: BASE_URL + "users"
+  USERS: BASE_URL + "users",
+  SCHOOLS: BASE_URL + "schools"
 };
 
 export default class CategoryService {
@@ -40,7 +41,7 @@ export default class CategoryService {
   };
 
   static register = async user => {
-    let url = URLS.USERS;
+    let url = URLS.SCHOOLS;
     try {
       const { data } = await axios.post(url, user);
       return data;
