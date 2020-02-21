@@ -38,7 +38,6 @@ class SaleContainer extends Component {
     return (
       <>
         <div className="sale">
-          {/* {this.props.loading && <Loader />} */}
           <Row>
             <Col>
               <div className="page-title-box">
@@ -59,7 +58,7 @@ class SaleContainer extends Component {
                 <CardBody>
                   <h3>Sales</h3>
                 </CardBody>
-                <Row className="course--list">
+                <Row className="sale--list">
                   <SaleList sales={sales} />
                 </Row>
               </Card>
