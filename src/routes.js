@@ -20,6 +20,9 @@ const CourseContainer = React.lazy(() =>
   import("./pages/course/CourseContainer")
 );
 const CourseAdd = React.lazy(() => import("./pages/course/CourseAdd"));
+
+const SaleContainer = React.lazy(() => import("./pages/sale/SaleContainer"));
+
 // handle auth and authorization
 
 const PrivateRoute = ({ component: Component, roles, ...rest }) => (
@@ -86,6 +89,13 @@ const routes = [
     path: "/course-create",
     name: "Courses",
     component: CourseAdd,
+    route: PrivateRoute,
+    roles: ["Admin"]
+  },
+  {
+    path: "/sales",
+    name: "Sales",
+    component: SaleContainer,
     route: PrivateRoute,
     roles: ["Admin"]
   },
