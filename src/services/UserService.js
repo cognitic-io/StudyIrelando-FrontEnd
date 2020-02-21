@@ -38,4 +38,16 @@ export default class CategoryService {
       // this.setState({ loading: false });
     }
   };
+
+  static register = async user => {
+    let url = URLS.USERS;
+    try {
+      const { data } = await axios.post(url, user);
+      return data;
+    } catch (err) {
+      return err.response.status;
+    } finally {
+      // this.setState({ loading: false });
+    }
+  };
 }

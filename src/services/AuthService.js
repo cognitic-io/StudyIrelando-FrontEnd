@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "./settings";
 
 const URLS = {
-  CATEGORIES: BASE_URL + "auth/login"
+  CATEGORIES: BASE_URL + "users/authenticate"
 };
 
 export default class AuthService {

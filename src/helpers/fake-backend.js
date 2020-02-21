@@ -30,14 +30,16 @@ export function configureFakeBackend() {
 
           AuthService.login(item)
             .then(res => {
-              let token = res.token.split(" ");
+              let token = res.token;
 
               responseJson = {
                 id: res.user._id,
                 username: res.user.name,
                 role: "Admin",
-                token: token[1]
+                email: res.user.email,
+                token: token
               };
+
               resolve({ ok: true, json: () => responseJson });
             })
             .catch(err => {
