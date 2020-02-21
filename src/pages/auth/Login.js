@@ -83,7 +83,10 @@ class Login extends Component {
   };
 
   register = () => {
-    this.setState({ successRegister: false, errorRegister: false });
+    this.setState({
+      successRegister: false,
+      errorRegister: false
+    });
 
     const { username, email, password, confirm } = this.state;
 
@@ -98,14 +101,23 @@ class Login extends Component {
       .then(response => {
         console.log("response", response);
         if (response === 400) {
-          this.setState({ successRegister: false, errorRegister: true });
+          this.setState({
+            successRegister: false,
+            errorRegister: true
+          });
         } else {
-          this.setState({ successRegister: true, errorRegister: false });
+          this.setState({
+            successRegister: true,
+            errorRegister: false
+          });
         }
       })
       .catch(err => {
         console.log("err", err);
-        this.setState({ successRegister: false, errorRegister: true });
+        this.setState({
+          successRegister: false,
+          errorRegister: true
+        });
       });
   };
 
@@ -175,6 +187,7 @@ class Login extends Component {
                               Log In
                             </Button>
                           </FormGroup>
+
                           <div className="text-center w-75 m-auto">
                             <p className="text-muted mb-4 mt-3">
                               or{" "}
